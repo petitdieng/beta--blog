@@ -1,0 +1,11 @@
+<H1>Details Article</H1>
+
+<H3>Article numero <%=@article.id%></H3>
+
+Titre:    <%=@article.title%><br>
+Description:    <%=@article.title%>
+
+<br><%= link_to "Edit", edit_article_path(@article)%>||<%= link_to "Delete", article_path(@article), data: { "turbo-method": "delete", "turbo-confirm": "Are you sure you want to delete the article?" }%>
+<br><%= link_to "Creer un article", "/articles/new" %>
+<br><%= link_to "Voir tous les articles", "/articles" %>
+<br><%= link_to "Home page", root_path %>

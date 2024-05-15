@@ -1,0 +1,22 @@
+<H1>Listing de tous les articles</H1>
+
+<table>
+    <tr>
+      <th>TITRE</th>
+      <th>DESCRIPTION</th>
+      <th colspan="3">ACTIONS</th>
+    </tr>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%=article.title%></td>
+      <td><%=article.description%></td>
+      <td><%= link_to "show", article_path(article)%></td>
+      <td><%= link_to "edit", edit_article_path(article)%></td>
+      <td><%= link_to "Delete", article_path(article), data: { "turbo-method": "delete", "turbo-confirm": "Are you sure you want to delete the article?" } %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <%= link_to "Creer un article", "/articles/new" %>
+  <br><%= link_to "Home page", root_path %>
+
