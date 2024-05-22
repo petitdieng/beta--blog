@@ -8,15 +8,26 @@
     </ul>
   <% end %>
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="row justify-content-md-center">
+    <div class="col-4 mt-4 shadow rounded-3 my-form">
+      <div class="mb-3">
+        <%= f.label :title, for:"title", class:"form-label" %>
+        <%= f.text_field :title, class:"form-control", placeholder:"Article Title" %> 
+      </div>
+      <div class="mb-3">
+        <%= f.label :description, class:"form-label" %>
+        <%= f.text_area :description, class:"form-control", rows:"6", placeholder:"Article Content ...." %>
+      </div>
+      <div>
+        <%= f.submit class:"btn btn-outline-success my-btn" %>
+      </div>
+    </div> 
+    <div class="text-center mt-3">
+      <%= link_to "Voir tous les articles", "/articles", class: "text-dark " %>
+    </div> 
+  </div>
 <% end %>
+
+
+
+

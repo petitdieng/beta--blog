@@ -1,22 +1,29 @@
-<H1>Listing de tous les articles</H1>
+<H1 class="text-center mt-4">Listing all articles</H1>
 
-<table>
-    <tr>
-      <th>TITRE</th>
-      <th>DESCRIPTION</th>
-      <th colspan="3">ACTIONS</th>
-    </tr>
+
     <% @articles.each do |article| %>
-    <tr>
-      <td><%=article.title%></td>
-      <td><%=article.description%></td>
-      <td><%= link_to "show", article_path(article)%></td>
-      <td><%= link_to "edit", edit_article_path(article)%></td>
-      <td><%= link_to "Delete", article_path(article), data: { "turbo-method": "delete", "turbo-confirm": "Are you sure you want to delete the article?" } %></td>
-    </tr>
+    <div class="row justify-content-md-center">
+      <div class="col-6 mt-4">
+        <div class="card text-center shadow mb-5 bg-body rounded">
+          <div class="card-header fst-italic">
+            By petitdieng
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%=link_to article.title, article_path(article), class: "text-success" %></h5>
+            <p class="card-text"><%=truncate(article.description, length: 100)%></p>
+            <%= link_to "show", article_path(article), class:"btn btn-outline-success"%> ||
+            <%= link_to "edit", edit_article_path(article),class:"btn btn-outline-primary"%> ||
+            <%= link_to "Delete", article_path(article),class:"btn btn-outline-danger", data: { "turbo-method": "delete", "turbo-confirm": "Are you sure you want to delete the article?" } %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>
+              Created about <%=time_ago_in_words(article.created_at)%> | Updated about <%=time_ago_in_words(article.updated_at)%> 
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
-  </table>
 
   <%= link_to "Creer un article", "/articles/new" %>
   <br><%= link_to "Home page", root_path %>
-

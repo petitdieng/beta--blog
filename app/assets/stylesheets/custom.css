@@ -1,3 +1,57 @@
+.navbar{
+    background-color: black !important;
+}
+.nav-link{
+    color: white !important;
+}
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+  #home-container{
+    margin-top: 25px;
+  }
+  .jumbotron{
+    background-image: url("writing.jpg"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
+    color: #fff;
+  }
+
+  html {
+    position: relative;
+    min-height: 100%;
+}
+ 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+}
+.footer-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 body{
-    background-color: aqua;
+    background-color: lightgray;
+}
+
+.my-form{
+    background-color: rgb(0, 0, 0);
+    color:white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 400px;
+}
+.my-btn{
+    hover 
 }
