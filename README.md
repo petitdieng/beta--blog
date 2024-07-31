@@ -1,3 +1,8 @@
+always run 
+
+'' bundle exec rails assets:precompile '' after download the package 
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
